@@ -53,9 +53,9 @@ function parseResponse($downLoad_response){
 	$isAbsoluteURL = "/((http|https):\/\/?)[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|\/?))/"; //regex check if valid url //(http or https)+[not whitespace or ()<>](all words & digits)or[not punctuation char]
 	$isRelativeURL = "/^(\/)[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|\/?))/";//same as above without protocol
 
-	$isEmail = "/([\w\.\-_]+)?\w+\@[\w\-\_]+(\.\w+){1,}/";	//name@domain.com //(any word/.-_)@(any word).
-	$isEmail_escaped = "/([\w\.\-_]+)?\w+\(at\)[\w\-\_]+(\(dot\)\w+){1,}/"; //name(at)domain(dot)com
-	$isEmail_escaped_at = "/([\w\.\-_]+)?\w+\(at\)[\w\-\_]+(\.\w+){1,}/"; //name(at)domain.com
+	$isEmail = "/([\w\.\-\_]+)?\w+\@[\w\-\_]+(\.\w+){1,}/";	//name@domain.com //(any word/.-_)@(any word).
+	$isEmail_escaped = "/([\w\.\-\_]+)?\w+\(at\)[\w\-\_]+(\(dot\)\w+){1,}/"; //name(at)domain(dot)com
+	$isEmail_escaped_at = "/([\w\.\-\_]+)?\w+\(at\)[\w\-\_]+(\.\w+){1,}/"; //name(at)domain.com
 
 	$isPhone = "/(([\+][\d]{1,6})(.[0-9\s\/\(\)\-]{8,17}\d))/"; //phone nr. with country code
 	
