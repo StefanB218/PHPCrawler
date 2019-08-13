@@ -98,7 +98,7 @@ function output($conn){
 	echo "<table border='1'><tr><th>Result</th><th>Hostname</th><th>Typ</th></tr>"; 
 	$sql = "SELECT DISTINCT * FROM crawler ORDER BY typ, hostname";
 	$result = $conn->query($sql);
-    if ($result->rows > 0) {
+    if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             echo "<tr>";
             echo "<td>". $row["result"]. "</td>";
