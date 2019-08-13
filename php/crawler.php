@@ -19,8 +19,13 @@ if (isset($_POST['submit'])) {
 
 function downLoad($downLoad_URL){
 		$cURL_connection = curl_init();
-		
-		$cURL_options = array(CURLOPT_URL=>$downLoad_URL,CURLOPT_HTTPGET=>true,CURLINFO_HEADER_OUT=>true,CURLOPT_FOLLOWLOCATION=>true,CURLOPT_RETURNTRANSFER=>true,
+
+		$cURL_options = array(
+			CURLOPT_URL=>$downLoad_URL,
+			CURLOPT_HTTPGET=>true,
+			CURLINFO_HEADER_OUT=>true,
+			CURLOPT_FOLLOWLOCATION=>true,
+			CURLOPT_RETURNTRANSFER=>true,
 			CURLOPT_USERAGENT=>"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:64.0) Gecko/20100101 Firefox/64.0"); // set cURL Options
 		curl_setopt_array($cURL_connection, $cURL_options);
 

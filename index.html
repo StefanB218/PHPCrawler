@@ -12,13 +12,13 @@ input[type=submit]{
   margin-top: 1em;
 }
 
-.iframe-container {
+.container {
   overflow: hidden;
-  padding-top: 56.25%;
+  padding-top: 50%;
   position: relative;
 }
  
-.iframe-container iframe {
+.container iframe {
    border: 0;
    height: 100%;
    left: 0;
@@ -27,18 +27,6 @@ input[type=submit]{
    width: 100%;
 }
 </style>
-<script lang="">
-   $.ajax({
-      type:"post",
-      url:"php/crawler.php",
-      data:data_str,
-      cache:false,
-      success:function(html){
-         $('#response').html(html);
-      }
-   })
-   return false;
-</script>
 <body>
     <form method="POST" action="php/crawler.php" target="iframe1">
         <input type="text" name="url_field" placeholder="Adresse zum durchsuchen eingeben...">
@@ -46,7 +34,7 @@ input[type=submit]{
         <input type="submit" name="show" value="Nur Tabelle anzeigen">
         <input type="submit" name="delete" value="Datenbank leeren">
     </form>
-    <div class="iframe-container">             
+    <div class="container">             
         <iframe name="iframe1"></iframe>       
     </div>
 </body>
