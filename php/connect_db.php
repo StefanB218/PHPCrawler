@@ -19,10 +19,11 @@ function db_close($conn)
 function db_insert($conn,$value1,$value2,$value3){
 
     $sql_query = "INSERT INTO crawler (result,hostname,typ) VALUES ('$value1','$value2','$value3');";
-
-    if($conn->query($sql_query) === true){
-       // echo "<pre>New record created successfully</pre>";
-    } else {
+    if($conn->query($sql_query) === false){
         echo "Error: " .$conn->error;
     }
+}
+
+function db_delete($conn){
+    $conn->query("TRUNCATE crawler;");
 }
